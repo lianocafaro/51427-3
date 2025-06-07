@@ -1,0 +1,4 @@
+switch(1) {
+  case 1 printf("Sin dos puntos"); break;
+  default printf("Faltan dos puntos");
+} 

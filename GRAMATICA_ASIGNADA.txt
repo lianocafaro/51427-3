@@ -1,0 +1,78 @@
+Tarea: Construcción de un Analizador con ANTLR4 y JavaScript  
+Tema: 39568_11
+
+Se proporciona una gramática en notación ANSI-C que describe una porcion reducida y adaptada del lenguaje C. 
+
+programa: instrucciones;
+instrucciones:
+    instruccion
+  | instrucciones instruccion
+  ;
+instruccion: seleccion;
+seleccion:
+    "switch" "(" identificador ")" "{" casos "}"
+  ;
+casos:
+    caso
+  | casos caso
+  ;
+caso:
+    "case" numero ":" sentencia
+  | "default" ":" sentencia
+  ;
+sentencia:
+    salida
+  | salida sentencia
+  | terminar
+  ;
+salida:
+    "printf" "(" cadena ")" ";"
+  ;
+terminar:
+    "break" ";"
+  ;
+identificador:
+    letra { letra | digito }*
+  ;
+numero:
+    { digito }+
+  ;
+cadena:
+    "\"" caracteres "\""
+  ;
+caracteres:
+    caracter
+  | caracteres caracter
+  ;
+caracter:
+    letra
+  | digito
+  | simbolo
+  ;
+letra:
+    "a" … "z"
+  | "A" … "Z"
+  ;
+digito:
+    "0" … "9"
+  ;
+simbolo:
+    "," | "." | ";" | "!" | "?" | "\""
+  ; 
+
+El analizador deberá realizar las siguientes tareas:
+
+1. Análisis léxico y sintáctico: realizar el análisis léxico y sintáctico sobre el código fuente e informar si la entrada es
+   correcta o contiene errores. En caso de errores, indicar la línea en la que ocurren y la causa del problema.
+
+2. Tabla de lexemas-tokens: Generar una tabla que contenga los lexemas y sus respectivos tokens reconocidos
+   durante el análisis léxico.
+
+3. Árbol de análisis sintáctico: Construir y mostrar el árbol de análisis sintáctico concreto de la entrada. Puede
+   representarse en formato de texto.
+
+4. Interpretación: Traducir el código fuente al lenguaje JavaScript y ejecutarlo como lo haría un intérprete básico.
+
+El desarrollo debe entregarse cumpliendo las pautas para la entrega establecidas en el documento Pautas de trabajo
+para analizador.
+

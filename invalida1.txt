@@ -1,0 +1,4 @@
+switch(x) {
+  case : printf("Falta número"); break;
+  default: printf("Default sin problema"); break;
+} 

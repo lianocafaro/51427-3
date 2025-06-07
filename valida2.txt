@@ -1,0 +1,5 @@
+switch(valor) {
+  case 10: printf("Número diez");
+  case 20: printf("Número veinte"); break;
+  default: printf("Sin coincidencia");
+} 
